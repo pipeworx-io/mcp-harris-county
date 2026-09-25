@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/harris-county",
   "title": "Harris County",
   "description": "Harris County (TX) District Clerk civil dockets — every civil case filed in",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "websiteUrl": "https://pipeworx.io/packs/harris-county",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-harris-county",

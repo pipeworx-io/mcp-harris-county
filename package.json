@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-harris-county",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Harris County (TX) District Clerk civil dockets — every civil case filed in",
   "type": "module",
   "main": "src/index.ts",
@@ -24,5 +24,9 @@
   "devDependencies": {
     "typescript": "^5.9.3",
     "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-5117e599f4cd321e6e3985ef1987b92cd8dfbcfbe3a7b59aa0d0cc2ab75592d4",
+    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
   }
 }
