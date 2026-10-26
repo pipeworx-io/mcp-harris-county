@@ -1,3 +1,29 @@
+interface McpToolDefinition {
+  name: string;
+  description: string;
+  /** Human-facing one-liner (fleet #1967). Optional; consumers fall back to
+   *  description. Kept in step with shared/src/types.ts — scripts/lib/
+   *  check-inlined-types.mjs reports drift at publish time. */
+  summary?: string;
+  inputSchema: {
+    type: 'object';
+    properties: Record<string, unknown>;
+    required?: string[];
+    anyOf?: Array<{ required: string[] }>;
+    oneOf?: Array<{ required: string[] }>;
+    allOf?: Array<{ required: string[] }>;
+  };
+  outputSchema?: Record<string, unknown>;
+}
+
+interface McpToolExport {
+  tools: McpToolDefinition[];
+  callTool: (name: string, args: Record<string, unknown>) => Promise<unknown>;
+  meter?: { credits: number };
+  cost?: Record<string, unknown>;
+  provider?: string;
+}
+
 /**
  * Harris County (TX) civil-docket tools — read the mirror over PostgREST.
  * Fleet #1085. Mirrors the `mcps/gov-auctions` shape: stateless, credentials
@@ -15,15 +41,12 @@
  * the stronger one.
  */
 
-// NOTHING IS IMPORTED FROM '@pipeworx/shared' IN THIS FILE, ON PURPOSE.
 //
 // publish-pack.sh builds the standalone npm package by INLINING the resolved
-// @pipeworx/shared helpers into `src/index.ts` — and only index.ts. Sibling
 // files are copied verbatim, so a sibling that imports shared keeps an import
 // of a workspace package the published repo does not have, and the standalone
 // typecheck dies with:
 //
-//   src/tools.ts(18,36): error TS2307: Cannot find module '@pipeworx/shared'
 //
 // This pack's whole implementation lives here rather than in index.ts, so it
 // was the one published pack that tripped it (fleet #2131). Exactly two packs

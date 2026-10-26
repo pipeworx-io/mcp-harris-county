@@ -1,7 +1,7 @@
 {
   "name": "@pipeworx/mcp-harris-county",
-  "version": "0.1.2",
-  "description": "Harris County (TX) District Clerk civil dockets — every civil case filed in",
+  "version": "0.1.3",
+  "description": "Harris County (TX) District Clerk civil dockets — every civil case filed in Texas's largest county, searchable by party, case number or filing date.",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-797d2e3c6096cabeb79adc324e3e754c6eea9d39c33639172e08b11e92491910",
-    "sourceCommit": "1064560fd9dcd0d6fc2606298c2ba244b3a1fbeb"
+    "sourceHash": "v1-58f198e3f95a812922378559c1bb248e347e669358bb1e52476a6f783fb40ade",
+    "sourceCommit": "24e32b525f9c0b2fd7d94b519b08abb108cc11cd"
   }
 }
